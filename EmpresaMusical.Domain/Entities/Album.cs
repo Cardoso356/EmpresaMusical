@@ -14,6 +14,17 @@ namespace EmpresaMusical.Domain.Entities
 
         }
 
+        public Album(int id, string? tituloAlbum, string? formato, DateTime data) 
+        {
+            Id = id;
+            TituloAlbum = tituloAlbum;
+            Formato = formato;
+            Data = data;
+        }
+
+        public string? TituloAlbum { get; set; }
+        public string? Formato { get; set; }
+        public DateTime Data { get; set; }
 
     }
 }

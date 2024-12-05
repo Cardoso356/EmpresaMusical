@@ -15,9 +15,9 @@ namespace EmpresaMusical.Domain.Entities
         }
         public Instrumento(int id, string nomeInstrumento, string tipo)
         {
-            this.Id = id;
-            this.NomeInstrumento = nomeInstrumento;
-            this.Tipo = tipo;
+            Id = id;
+            NomeInstrumento = nomeInstrumento;
+            Tipo = tipo;
         }
 
         public string? NomeInstrumento { get; set; }
