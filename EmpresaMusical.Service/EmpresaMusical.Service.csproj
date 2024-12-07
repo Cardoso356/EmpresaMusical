@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmpresaMusical.Domain\EmpresaMusical.Domain.csproj" />
+    <ProjectReference Include="..\EmpresaMusical.Repository\EmpresaMusical.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

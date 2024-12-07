@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace EmpresaMusical.Domain.Base
         public void AttachObject(object obj);
 
         TOutputModel Add<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
-            //where TValidator : AbstractValidator<TEntity>
+            where TValidator : AbstractValidator<TEntity>
             where TInputModel : class
             where TOutputModel : class;
 
@@ -24,7 +25,7 @@ namespace EmpresaMusical.Domain.Base
             where TOutputModel : class;
 
         TOutputModel Update<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
-            //where TValidator : AbstractValidator<TEntity>
+            where TValidator : AbstractValidator<TEntity>
             where TInputModel : class
             where TOutputModel : class;
 

@@ -25,9 +25,8 @@ namespace EmpresaMusical.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(100)");
 
-            builder.HasOne(prop => prop.Album)
-                .WithMany()
-                .HasConstraintName("FK_Album");
+            builder.HasOne(prop => prop.Album);
+                
         }
     }
 }

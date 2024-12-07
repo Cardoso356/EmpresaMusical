@@ -15,12 +15,10 @@ namespace EmpresaMusical.Repository.Mapping
         {
             builder.ToTable("MusicoAlbum");
 
-            builder.HasOne(prop => prop.Musico)
-                .WithMany()
-                .HasConstraintName("FK_Musico");
-            builder.HasOne(prop => prop.Album)
-                .WithMany()
-                .HasConstraintName("FK_Album");
+            builder.HasOne(prop => prop.Musico);
+                
+            builder.HasOne(prop => prop.Album);
+                
         }
     }
 }
