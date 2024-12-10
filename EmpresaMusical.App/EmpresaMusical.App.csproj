@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.11" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+    <PackageReference Include="ReaLTaiizor" Version="3.8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmpresaMusical.Domain\EmpresaMusical.Domain.csproj" />
+    <ProjectReference Include="..\EmpresaMusical.Repository\EmpresaMusical.Repository.csproj" />
+    <ProjectReference Include="..\EmpresaMusical.Service\EmpresaMusical.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Base\" />
+    <Folder Include="Cadastros\" />
+    <Folder Include="Config\" />
+    <Folder Include="Infra\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Outros\" />
+  </ItemGroup>
+
+</Project>
