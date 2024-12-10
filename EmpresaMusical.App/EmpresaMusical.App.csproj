@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,16 +18,6 @@
     <ProjectReference Include="..\EmpresaMusical.Domain\EmpresaMusical.Domain.csproj" />
     <ProjectReference Include="..\EmpresaMusical.Repository\EmpresaMusical.Repository.csproj" />
     <ProjectReference Include="..\EmpresaMusical.Service\EmpresaMusical.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Base\" />
-    <Folder Include="Cadastros\" />
-    <Folder Include="Config\" />
-    <Folder Include="Infra\" />
-    <Folder Include="Models\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Outros\" />
   </ItemGroup>
 
 </Project>
