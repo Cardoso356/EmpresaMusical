@@ -124,7 +124,9 @@ namespace EmpresaMusical.Test
                 NomeMusico = "Roberto Carlos",
                 Endereco = "Rua interna da Rede Globo, nº302",
                 Email = "OReiQueCongelaEDescongela@gmail.com",
-                Telefone = "991220225"
+                Telefone = "991220225",
+                Login = "rei",
+                Senha = "reizão"
             };
 
             var result = musicoService.Add<Musico, Musico, MusicoValidator>(musico);

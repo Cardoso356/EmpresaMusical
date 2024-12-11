@@ -28,7 +28,7 @@ namespace EmpresaMusical.Test
         [TestMethod]
         public void TestMusico()
         {
-            Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375");
+            Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375", "cardoso", "1234");
 
             Debug.WriteLine(JsonSerializer.Serialize(musico));
 
@@ -36,6 +36,8 @@ namespace EmpresaMusical.Test
             Assert.AreEqual(musico.Endereco, "Viena");
             Assert.AreEqual(musico.Email, "OMaisFoda@gmail.com");
             Assert.AreEqual(musico.Telefone, "991014375");
+            Assert.AreEqual(musico.Login, "cardoso");
+            Assert.AreEqual(musico.Senha, "1234");
         }
 
         [TestMethod]
@@ -65,7 +67,7 @@ namespace EmpresaMusical.Test
         [TestMethod]
         public void TestMusicoInstrumento()
         {
-            Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375");
+            Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375", "cardoso", "1234");
             Instrumento instrumento = new Instrumento(1, "Piano", "percussão");
 
             MusicoInstrumento musicoInstrumento = new MusicoInstrumento(musico, instrumento);
@@ -77,7 +79,7 @@ namespace EmpresaMusical.Test
         [TestMethod]
         public void TestMusicoAlbum()
         {
-            Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375");
+            Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375", "cardoso", "1234");
             Album album = new Album(1, "Sonata ao Luar", "vinil", DateTime.Parse("2002-05-22"));
 
             MusicoAlbum musicoAlbum = new MusicoAlbum(musico, album);

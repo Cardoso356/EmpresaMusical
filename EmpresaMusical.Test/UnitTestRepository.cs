@@ -94,7 +94,9 @@ namespace EmpresaMusical.Test
                     NomeMusico = "Corey Taylor",
                     Endereco = "Rua dos Mais Fodas - Los Angeles",
                     Email = "coreyTaylorSlipknot@gmail.com",
-                    Telefone = "123-456"
+                    Telefone = "123-456",
+                    Login = "admin",
+                    Senha = "admin"
                 };
                 context.Musicos.Add(musico);
 
@@ -103,7 +105,9 @@ namespace EmpresaMusical.Test
                     NomeMusico = "Michael Jackson",
                     Endereco = "Rancho Neverland - Los Angeles",
                     Email = "Rusbe@gmail.com",
-                    Telefone = "654-321"
+                    Telefone = "654-321",
+                    Login = "rusbe",
+                    Senha = "rusbe"
                 };
                 context.Musicos.Add(musico);
 
