@@ -35,7 +35,7 @@ namespace EmpresaMusical.App.Outros
             else
             {
                 musico = _musicoService.Update<Musico, Musico, MusicoValidator>(musico);
-                FormPrincipal.Usuario = musico;
+                FormPrincipal.Musico = musico;
                 DialogResult = DialogResult.OK;
                 Close();
             }

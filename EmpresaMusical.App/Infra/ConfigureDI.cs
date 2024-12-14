@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EmpresaMusical.App.Base;
 using EmpresaMusical.App.Cadastros;
 using EmpresaMusical.App.Models;
 using EmpresaMusical.App.Outros;
@@ -61,13 +62,11 @@ namespace EmpresaMusical.App.Infra
 
             #region Formulários
             // Formulários
-            //Services.AddTransient<Login, Login>();
+            Services.AddTransient<Login, Login>();
             Services.AddTransient<CadastroInstrumento, CadastroInstrumento>();
-            Services.AddTransient<CadastroMusico, CadastroMusico>();
-            Services.AddTransient<CadastroAlbum, CadastroAlbum>();
-            Services.AddTransient<CadastroMusica, CadastroMusica>();
-            //Services.AddTransient<CadastroCliente, CadastroCliente>();
-            //Services.AddTransient<CadastroVenda, CadastroVenda>();
+            //Services.AddTransient<CadastroMusico, CadastroMusico>();
+            //Services.AddTransient<CadastroAlbum, CadastroAlbum>();
+            //Services.AddTransient<CadastroMusica, CadastroMusica>();
             #endregion
 
             #region Mappings
@@ -75,8 +74,10 @@ namespace EmpresaMusical.App.Infra
 
             Services.AddSingleton(new MapperConfiguration(config =>
             {
-                config.CreateMap<Instrumento, InstrumentoModel>();
-                config.CreateMap<Cidade, CidadeModel>()
+                config.CreateMap<Instrumento, InstrumentoModels>()
+                    .ForMember(d => d.NomeInstrumento, d => d.MapFrom(prop => $"{prop.NomeInstrumento}/{prop.Tipo}"));
+
+                /*config.CreateMap<Cidade, CidadeModel>()
                     .ForMember(d => d.NomeEstado, d => d.MapFrom(x => $"{x.Nome}/{x.Estado}"));
                 config.CreateMap<Cliente, ClienteModel>()
                     .ForMember(d => d.Cidade, d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
@@ -93,7 +94,7 @@ namespace EmpresaMusical.App.Infra
 
                 config.CreateMap<VendaItem, VendaItemModel>()
                     .ForMember(d => d.IdProduto, d => d.MapFrom(x => x.Produto!.Id))
-                    .ForMember(d => d.Produto, d => d.MapFrom(x => x.Produto!.Nome));
+                    .ForMember(d => d.Produto, d => d.MapFrom(x => x.Produto!.Nome));*/
 
             }).CreateMapper());
 
