@@ -1,4 +1,4 @@
-using EmpresaMusical.App.Base;
+using EmpresaMusical.App.Cadastros;
 using EmpresaMusical.App.Infra;
 using EmpresaMusical.App.Outros;
 using EmpresaMusical.Domain.Entities;
@@ -38,6 +38,31 @@ namespace EmpresaMusical.App
             {
                 e.Cancel = true;
             }
+        }
+
+        private void musicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroMusico>();
+        }
+
+        private void instrumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroInstrumento>();
+        }
+
+        private void albumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroAlbum>();
+        }
+
+        private void musicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroMusica>();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0); //encerra a aplicação
         }
 
         private void ExibeFormulario<TFormulario>() where TFormulario : Form

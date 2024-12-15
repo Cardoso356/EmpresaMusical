@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace EmpresaMusical.App.Cadastros
 {
-    public partial class CadastroInstrumento : CadastroBase
+    public partial class CadastroAlbum : CadastroBase
     {
-        public CadastroInstrumento()
+        public CadastroAlbum()
         {
             InitializeComponent();
         }

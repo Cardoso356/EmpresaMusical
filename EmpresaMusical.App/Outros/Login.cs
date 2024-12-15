@@ -58,10 +58,12 @@ namespace EmpresaMusical.App.Outros
             {
                 var musico = new Musico
                 {
-                    Login = "admin",
-                    Senha = "admin",
-                    NomeMusico = "Admnistrador",
-                    Email = "admin@gmail.com"
+                    Login = "musico",
+                    Senha = "musico",
+                    NomeMusico = "Admnistrador do sistema",
+                    Email = "admin@gmail.com",
+                    Endereco = "Rua dos adm",
+                    Telefone = "991220225"
                 };
                 _musicoService.Add<Musico, Musico, MusicoValidator>(musico);
             }

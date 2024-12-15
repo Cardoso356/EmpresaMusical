@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using EmpresaMusical.App.Base;
 using EmpresaMusical.App.Cadastros;
 using EmpresaMusical.App.Models;
 using EmpresaMusical.App.Outros;
@@ -64,9 +63,9 @@ namespace EmpresaMusical.App.Infra
             // Formulários
             Services.AddTransient<Login, Login>();
             Services.AddTransient<CadastroInstrumento, CadastroInstrumento>();
-            //Services.AddTransient<CadastroMusico, CadastroMusico>();
-            //Services.AddTransient<CadastroAlbum, CadastroAlbum>();
-            //Services.AddTransient<CadastroMusica, CadastroMusica>();
+            Services.AddTransient<CadastroMusico, CadastroMusico>();
+            Services.AddTransient<CadastroAlbum, CadastroAlbum>();
+            Services.AddTransient<CadastroMusica, CadastroMusica>();
             #endregion
 
             #region Mappings

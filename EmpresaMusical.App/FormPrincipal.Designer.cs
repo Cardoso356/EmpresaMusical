@@ -67,6 +67,7 @@
             musicoToolStripMenuItem.Name = "musicoToolStripMenuItem";
             musicoToolStripMenuItem.Size = new Size(171, 26);
             musicoToolStripMenuItem.Text = "Músico";
+            musicoToolStripMenuItem.Click += musicoToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -78,6 +79,7 @@
             instrumentoToolStripMenuItem.Name = "instrumentoToolStripMenuItem";
             instrumentoToolStripMenuItem.Size = new Size(171, 26);
             instrumentoToolStripMenuItem.Text = "Instrumento";
+            instrumentoToolStripMenuItem.Click += instrumentoToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
@@ -89,6 +91,7 @@
             albumToolStripMenuItem.Name = "albumToolStripMenuItem";
             albumToolStripMenuItem.Size = new Size(171, 26);
             albumToolStripMenuItem.Text = "Álbum";
+            albumToolStripMenuItem.Click += albumToolStripMenuItem_Click;
             // 
             // toolStripSeparator3
             // 
@@ -100,12 +103,14 @@
             musicaToolStripMenuItem.Name = "musicaToolStripMenuItem";
             musicaToolStripMenuItem.Size = new Size(171, 26);
             musicaToolStripMenuItem.Text = "Música";
+            musicaToolStripMenuItem.Click += musicaToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(48, 24);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -127,14 +132,16 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.imagemEmpresaMusical;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(851, 571);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
             MainMenuStrip = menuStrip;
             Name = "FormPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Gerenciamento de Empresa Musical";
             WindowState = FormWindowState.Maximized;
             FormClosing += FormPrincipal_FormClosing;

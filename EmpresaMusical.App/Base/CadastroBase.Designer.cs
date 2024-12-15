@@ -219,9 +219,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(772, 626);
             Controls.Add(tabControlCadastro);
-            DrawerShowIconsWhenHidden = true;
             DrawerTabControl = tabControlCadastro;
             Name = "CadastroBase";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroBase";
             tabControlCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
