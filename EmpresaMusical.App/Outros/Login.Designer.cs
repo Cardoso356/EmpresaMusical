@@ -58,7 +58,7 @@
             txtMusico.SelectionLength = 0;
             txtMusico.SelectionStart = 0;
             txtMusico.ShortcutsEnabled = true;
-            txtMusico.Size = new Size(332, 48);
+            txtMusico.Size = new Size(415, 48);
             txtMusico.TabIndex = 0;
             txtMusico.TabStop = false;
             txtMusico.TextAlign = HorizontalAlignment.Left;
@@ -89,7 +89,7 @@
             txtSenha.SelectionLength = 0;
             txtSenha.SelectionStart = 0;
             txtSenha.ShortcutsEnabled = true;
-            txtSenha.Size = new Size(332, 48);
+            txtSenha.Size = new Size(415, 48);
             txtSenha.TabIndex = 1;
             txtSenha.TabStop = false;
             txtSenha.TextAlign = HorizontalAlignment.Left;
@@ -104,7 +104,7 @@
             botaoCancelar.HighEmphasis = true;
             botaoCancelar.Icon = null;
             botaoCancelar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            botaoCancelar.Location = new Point(159, 272);
+            botaoCancelar.Location = new Point(223, 335);
             botaoCancelar.Margin = new Padding(4, 6, 4, 6);
             botaoCancelar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             botaoCancelar.Name = "botaoCancelar";
@@ -125,7 +125,7 @@
             botaoOK.HighEmphasis = true;
             botaoOK.Icon = null;
             botaoOK.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            botaoOK.Location = new Point(274, 272);
+            botaoOK.Location = new Point(342, 335);
             botaoOK.Margin = new Padding(4, 6, 4, 6);
             botaoOK.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             botaoOK.Name = "botaoOK";
@@ -142,7 +142,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(344, 323);
+            ClientSize = new Size(427, 380);
             Controls.Add(botaoOK);
             Controls.Add(botaoCancelar);
             Controls.Add(txtSenha);

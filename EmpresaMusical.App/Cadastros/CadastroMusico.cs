@@ -1,4 +1,5 @@
 ﻿using EmpresaMusical.App.Base;
+using EmpresaMusical.App.Models;
 using EmpresaMusical.Domain.Base;
 using EmpresaMusical.Domain.Entities;
 using EmpresaMusical.Service.Validators;
@@ -16,8 +17,11 @@ namespace EmpresaMusical.App.Cadastros
 {
     public partial class CadastroMusico : CadastroBase
     {
-        public CadastroMusico()
+        private readonly IBaseService<Musico> _musicoService;
+        private List<MusicoModel>? musicos;
+        public CadastroMusico(IBaseService<Musico> musicoService)
         {
+            _musicoService = musicoService;
             InitializeComponent();
         }
     }
