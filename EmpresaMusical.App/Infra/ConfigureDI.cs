@@ -66,6 +66,7 @@ namespace EmpresaMusical.App.Infra
             Services.AddTransient<CadastroMusico, CadastroMusico>();
             Services.AddTransient<CadastroAlbum, CadastroAlbum>();
             Services.AddTransient<CadastroMusica, CadastroMusica>();
+            Services.AddTransient<CadastroMusicoInstrumento, CadastroMusicoInstrumento>();
             #endregion
 
             #region Mappings
@@ -76,9 +77,14 @@ namespace EmpresaMusical.App.Infra
                 config.CreateMap<Instrumento, InstrumentoModels>()
                     .ForMember(d => d.NomeInstrumento, d => d.MapFrom(prop => $"{prop.NomeInstrumento}/{prop.Tipo}"));
 
-                /*config.CreateMap<Cidade, CidadeModel>()
-                    .ForMember(d => d.NomeEstado, d => d.MapFrom(x => $"{x.Nome}/{x.Estado}"));
-                config.CreateMap<Cliente, ClienteModel>()
+                config.CreateMap<Musico, MusicoModel>()
+                    .ForMember(d => d.NomeMusico, d => d.MapFrom(x => $"{x.NomeMusico}"));
+
+                config.CreateMap<MusicoInstrumento, MusicoInstrumentoModel>()
+                    .ForMember(d => d.Musico, d => d.MapFrom(x => $"{x.Musico!.Id}"))
+                    .ForMember(d => d.Instrumento, d=>  d.MapFrom(x => $"{x.Instrumento!.Id}"));
+
+                /*config.CreateMap<Cliente, ClienteModel>()
                     .ForMember(d => d.Cidade, d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
                     .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
                 config.CreateMap<Grupo, GrupoModel>();

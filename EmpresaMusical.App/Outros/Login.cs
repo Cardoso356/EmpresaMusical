@@ -60,7 +60,7 @@ namespace EmpresaMusical.App.Outros
                 {
                     Login = "musico",
                     Senha = "musico",
-                    NomeMusico = "Admnistrador do sistema",
+                    NomeMusico = "Administrador do sistema",
                     Email = "admin@gmail.com",
                     Endereco = "Rua dos adm",
                     Telefone = "991220225"

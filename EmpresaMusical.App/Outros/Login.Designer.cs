@@ -44,7 +44,7 @@
             txtMusico.Depth = 0;
             txtMusico.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtMusico.HideSelection = true;
-            txtMusico.Hint = "Musico";
+            txtMusico.Hint = "Usuário/Musico";
             txtMusico.LeadingIcon = null;
             txtMusico.Location = new Point(6, 90);
             txtMusico.MaxLength = 32767;

@@ -65,6 +65,11 @@ namespace EmpresaMusical.App
             Environment.Exit(0); //encerra a aplicação
         }
 
+        private void musicoInstrumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroMusicoInstrumento>();
+        }
+
         private void ExibeFormulario<TFormulario>() where TFormulario : Form
         {
             var cad = ConfigureDI.ServicesProvider!.GetService<TFormulario>();
