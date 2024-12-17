@@ -70,6 +70,17 @@ namespace EmpresaMusical.App
             ExibeFormulario<CadastroMusicoInstrumento>();
         }
 
+        private void musicoAlbumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroMusicoAlbum>();
+        }
+
+        /*private void musicAlbumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroMusicoAlbum>();
+        }*/
+
+
         private void ExibeFormulario<TFormulario>() where TFormulario : Form
         {
             var cad = ConfigureDI.ServicesProvider!.GetService<TFormulario>();

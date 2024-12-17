@@ -67,6 +67,7 @@ namespace EmpresaMusical.App.Infra
             Services.AddTransient<CadastroAlbum, CadastroAlbum>();
             Services.AddTransient<CadastroMusica, CadastroMusica>();
             Services.AddTransient<CadastroMusicoInstrumento, CadastroMusicoInstrumento>();
+            Services.AddTransient<CadastroMusicoAlbum, CadastroMusicoAlbum>();
             #endregion
 
             #region Mappings
@@ -93,20 +94,13 @@ namespace EmpresaMusical.App.Infra
 
                 config.CreateMap<Musica, MusicaModel>()
                     .ForMember(d => d.Album, d => d.MapFrom(x => x.Album!.TituloAlbum))
-                    .ForMember(d => d.IdAlbum, d => d.MapFrom(x => x.Album.Id));
+                    .ForMember(d => d.IdAlbum, d => d.MapFrom(x => x.Album!.Id));
 
-                /*config.CreateMap<Produto, ProdutoModel>()
-                    .ForMember(d => d.Grupo, d => d.MapFrom(x => x.Grupo!.Nome))
-                    .ForMember(d => d.IdGrupo, d => d.MapFrom(x => x.Grupo!.Id));
-                config.CreateMap<Venda, VendaModel>()
-                    .ForMember(d => d.IdCliente, d => d.MapFrom(x => x.Cliente!.Id))
-                    .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Cliente!.Nome))
-                    .ForMember(d => d.IdUsuario, d => d.MapFrom(x => x.Usuario!.Id))
-                    .ForMember(d => d.Usuario, d => d.MapFrom(x => x.Usuario!.Nome));
-
-                config.CreateMap<VendaItem, VendaItemModel>()
-                    .ForMember(d => d.IdProduto, d => d.MapFrom(x => x.Produto!.Id))
-                    .ForMember(d => d.Produto, d => d.MapFrom(x => x.Produto!.Nome));*/
+                config.CreateMap<MusicoAlbum, MusicoAlbumModel>()
+                    .ForMember(d => d.IdMusico, d => d.MapFrom(x => $"{x.Musico!.Id}"))
+                    .ForMember(d => d.Musico, d => d.MapFrom(x => $"{x.Musico!.NomeMusico}"))
+                    .ForMember(d => d.IdAlbum, d => d.MapFrom(x => $"{x.Album!.Id}"))
+                    .ForMember(d => d.Album, d => d.MapFrom(x => $"{x.Album!.TituloAlbum}"));
 
             }).CreateMapper());
 

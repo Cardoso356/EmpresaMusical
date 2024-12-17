@@ -40,11 +40,11 @@
             musicaToolStripMenuItem = new ToolStripMenuItem();
             relaçõesToolStripMenuItem = new ToolStripMenuItem();
             musicoInstrumentoToolStripMenuItem = new ToolStripMenuItem();
-            musicAlbumToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator4 = new ToolStripSeparator();
+            musicoAlbumToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             lblMusico = new ToolStripStatusLabel();
-            toolStripSeparator4 = new ToolStripSeparator();
             menuStrip.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -111,7 +111,7 @@
             // 
             // relaçõesToolStripMenuItem
             // 
-            relaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { musicoInstrumentoToolStripMenuItem, toolStripSeparator4, musicAlbumToolStripMenuItem });
+            relaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { musicoInstrumentoToolStripMenuItem, toolStripSeparator4, musicoAlbumToolStripMenuItem });
             relaçõesToolStripMenuItem.Name = "relaçõesToolStripMenuItem";
             relaçõesToolStripMenuItem.Size = new Size(82, 24);
             relaçõesToolStripMenuItem.Text = "Relações";
@@ -120,14 +120,20 @@
             // 
             musicoInstrumentoToolStripMenuItem.Name = "musicoInstrumentoToolStripMenuItem";
             musicoInstrumentoToolStripMenuItem.Size = new Size(224, 26);
-            musicoInstrumentoToolStripMenuItem.Text = "Musico-Instrumento";
+            musicoInstrumentoToolStripMenuItem.Text = "Músico-Instrumento";
             musicoInstrumentoToolStripMenuItem.Click += musicoInstrumentoToolStripMenuItem_Click;
             // 
-            // musicAlbumToolStripMenuItem
+            // toolStripSeparator4
             // 
-            musicAlbumToolStripMenuItem.Name = "musicAlbumToolStripMenuItem";
-            musicAlbumToolStripMenuItem.Size = new Size(224, 26);
-            musicAlbumToolStripMenuItem.Text = "Musico-Álbum";
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(221, 6);
+            // 
+            // musicoAlbumToolStripMenuItem
+            // 
+            musicoAlbumToolStripMenuItem.Name = "musicoAlbumToolStripMenuItem";
+            musicoAlbumToolStripMenuItem.Size = new Size(224, 26);
+            musicoAlbumToolStripMenuItem.Text = "Músico-Álbum";
+            musicoAlbumToolStripMenuItem.Click += musicoAlbumToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -151,11 +157,6 @@
             lblMusico.Name = "lblMusico";
             lblMusico.Size = new Size(56, 20);
             lblMusico.Text = "Musico";
-            // 
-            // toolStripSeparator4
-            // 
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(221, 6);
             // 
             // FormPrincipal
             // 
@@ -198,7 +199,7 @@
         private ToolStripStatusLabel lblMusico;
         private ToolStripMenuItem relaçõesToolStripMenuItem;
         private ToolStripMenuItem musicoInstrumentoToolStripMenuItem;
-        private ToolStripMenuItem musicAlbumToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator4;
+        private ToolStripMenuItem musicoAlbumToolStripMenuItem;
     }
 }
