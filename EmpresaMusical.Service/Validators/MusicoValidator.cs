@@ -21,6 +21,7 @@ namespace EmpresaMusical.Service.Validators
                 .NotNull().WithMessage("Por favor, informe o endereço do músico");
 
             RuleFor(prop => prop.Email)
+                .EmailAddress().WithMessage("E-mail inválido.")
                 .NotEmpty().WithMessage("Por favor, informe o endereço de email do músico")
                 .NotNull().WithMessage("Por favor, informe o endereço de email do músico");
 

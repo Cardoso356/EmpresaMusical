@@ -81,6 +81,7 @@ namespace EmpresaMusical.App.Cadastros
             instrumentos = _instrumentoService.Get<Instrumento>().ToList();
             dataGridViewConsulta.DataSource = instrumentos;
             dataGridViewConsulta.Columns["NomeInstrumento"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewConsulta.Columns["Tipo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Alterando a ordem de exibição
             dataGridViewConsulta.Columns["Id"].DisplayIndex = 0; // Primeiro o Id
