@@ -24,32 +24,34 @@ namespace EmpresaMusical.App.Cadastros
         private List<MusicoInstrumentoModel>? musicoInstrumentos;
         public CadastroMusicoInstrumento(IBaseService<MusicoInstrumento> musicoInstrumentoService ,IBaseService<Musico> musicoService, IBaseService<Instrumento> instrumentoService)
         {
-            InitializeComponent();
-            _musicoInstrumentoService = musicoInstrumentoService;
             _musicoService = musicoService;
             _instrumentoService = instrumentoService;
+            _musicoInstrumentoService = musicoInstrumentoService;
+            InitializeComponent();
             CarregarCombo();
         }
 
         private void CarregarCombo()
         {
             cboMusicoId.ValueMember = "Id";
+            cboMusicoId.DisplayMember = "NomeMusico";
             cboMusicoId.DataSource = _musicoService.Get<MusicoModel>().ToList();
 
             cboInstrumentoId.ValueMember = "Id";
+            cboInstrumentoId.DisplayMember = "NomeInstrumento";
             cboInstrumentoId.DataSource = _instrumentoService.Get<InstrumentoModels>().ToList();
         }
 
         private void PreencheObjeto(MusicoInstrumento musicoInstrumento)
         {
 
-            if (int.TryParse(cboMusicoId.SelectedValue.ToString(), out int idMusico))
+            if (cboMusicoId.SelectedValue != null && int.TryParse(cboMusicoId.SelectedValue.ToString(), out int idMusico))
             {
                 var musico = _musicoService.GetById<Musico>(idMusico);
                 musicoInstrumento.Musico = musico;
             }
 
-            if (int.TryParse(cboInstrumentoId.SelectedValue.ToString(), out int idInstrumento))
+            if (cboInstrumentoId.SelectedValue != null && int.TryParse(cboInstrumentoId.SelectedValue.ToString(), out int idInstrumento))
             {
                 var instrumento = _instrumentoService.GetById<Instrumento>(idInstrumento);
                 musicoInstrumento.Instrumento = instrumento;
@@ -63,12 +65,12 @@ namespace EmpresaMusical.App.Cadastros
             {
                 if (isAlteracao)
                 {
-                    /*if (int.TryParse(txtId.Text, out var id))
+                    if (int.TryParse(txtId.Text, out var id))
                     {
-                        var produto = _produtoService.GetById<Produto>(id);
-                        PreencheObjeto(produto);
-                        produto = _produtoService.Update<Produto, Produto, ProdutoValidator>(produto);
-                    }*/
+                        var musicoInstrumento = _musicoInstrumentoService.GetById<MusicoInstrumento>(id);
+                        PreencheObjeto(musicoInstrumento);
+                        musicoInstrumento = _musicoInstrumentoService.Update<MusicoInstrumento, MusicoInstrumento, MusicoInstrumentoValidator>(musicoInstrumento);
+                    }
                 }
                 else
                 {
@@ -101,19 +103,30 @@ namespace EmpresaMusical.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            musicoInstrumentos = _musicoInstrumentoService.Get<MusicoInstrumentoModel>(false, new[] { "Musico" }).ToList();
+            musicoInstrumentos = _musicoInstrumentoService.Get<MusicoInstrumentoModel>(false, new[] { "Musico", "Instrumento" }).ToList();
             dataGridViewConsulta.DataSource = musicoInstrumentos;
-            dataGridViewConsulta.Columns["IdMusico"]!.Visible = false;
+            dataGridViewConsulta.Columns["Id"]!.Visible = false;
 
-            musicoInstrumentos = _musicoInstrumentoService.Get<MusicoInstrumentoModel>(false, new[] { "Instrumento" }).ToList();
-            dataGridViewConsulta.DataSource = musicoInstrumentos;
-            dataGridViewConsulta.Columns["IdInstrumento"]!.Visible = false;
+            // Configuração das colunas
+            dataGridViewConsulta.Columns["Musico"]!.HeaderText = "Músico";
+            dataGridViewConsulta.Columns["Instrumento"]!.HeaderText = "Instrumento";
+
+            dataGridViewConsulta.Columns["Id"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewConsulta.Columns["Musico"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewConsulta.Columns["Instrumento"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
+
+            //dataGridViewConsulta.Columns["Id"]!.Visible = false;
+            //musicoInstrumentos = _musicoInstrumentoService.Get<MusicoInstrumentoModel>(false, new[] { "Instrumento" }).ToList();
+            //dataGridViewConsulta.DataSource = musicoInstrumentos;
+            //dataGridViewConsulta.Columns["IdInstrumento"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
-            cboMusicoId.Text = linha?.Cells["IdMusico"].Value.ToString();
-            cboInstrumentoId.Text = linha?.Cells["IdInstrumento"].Value.ToString();
+            cboMusicoId.SelectedValue = linha?.Cells["IdMusico"].Value.ToString();
+            cboInstrumentoId.SelectedValue = linha?.Cells["IdInstrumento"].Value.ToString();
             
 
         }

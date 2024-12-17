@@ -31,6 +31,7 @@
             materialTextBoxEdit1 = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboMusicoId = new ReaLTaiizor.Controls.MaterialComboBox();
             cboInstrumentoId = new ReaLTaiizor.Controls.MaterialComboBox();
+            txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
@@ -42,6 +43,7 @@
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(cboInstrumentoId);
             tabPageCadastro.Controls.Add(cboMusicoId);
             tabPageCadastro.Controls.Add(materialTextBoxEdit1);
@@ -51,6 +53,7 @@
             tabPageCadastro.Controls.SetChildIndex(materialTextBoxEdit1, 0);
             tabPageCadastro.Controls.SetChildIndex(cboMusicoId, 0);
             tabPageCadastro.Controls.SetChildIndex(cboInstrumentoId, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             // 
             // materialTextBoxEdit1
             // 
@@ -60,8 +63,10 @@
             materialTextBoxEdit1.BackgroundImageLayout = ImageLayout.None;
             materialTextBoxEdit1.CharacterCasing = CharacterCasing.Normal;
             materialTextBoxEdit1.Depth = 0;
+            materialTextBoxEdit1.Enabled = false;
             materialTextBoxEdit1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialTextBoxEdit1.HideSelection = true;
+            materialTextBoxEdit1.Hint = "                                                         Relação de Músico-Instrumento";
             materialTextBoxEdit1.LeadingIcon = null;
             materialTextBoxEdit1.Location = new Point(6, 17);
             materialTextBoxEdit1.MaxLength = 32767;
@@ -78,7 +83,6 @@
             materialTextBoxEdit1.Size = new Size(705, 48);
             materialTextBoxEdit1.TabIndex = 5;
             materialTextBoxEdit1.TabStop = false;
-            materialTextBoxEdit1.Text = "                                                         Relação de Músico-Instrumento";
             materialTextBoxEdit1.TextAlign = HorizontalAlignment.Left;
             materialTextBoxEdit1.TrailingIcon = null;
             materialTextBoxEdit1.UseSystemPasswordChar = false;
@@ -95,10 +99,10 @@
             cboMusicoId.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboMusicoId.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboMusicoId.FormattingEnabled = true;
-            cboMusicoId.Hint = "Id do Músico";
+            cboMusicoId.Hint = "Músico";
             cboMusicoId.IntegralHeight = false;
             cboMusicoId.ItemHeight = 43;
-            cboMusicoId.Location = new Point(6, 86);
+            cboMusicoId.Location = new Point(6, 88);
             cboMusicoId.MaxDropDownItems = 4;
             cboMusicoId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboMusicoId.Name = "cboMusicoId";
@@ -118,16 +122,47 @@
             cboInstrumentoId.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboInstrumentoId.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboInstrumentoId.FormattingEnabled = true;
-            cboInstrumentoId.Hint = "Id do Instrumento";
+            cboInstrumentoId.Hint = "Instrumento";
             cboInstrumentoId.IntegralHeight = false;
             cboInstrumentoId.ItemHeight = 43;
-            cboInstrumentoId.Location = new Point(362, 86);
+            cboInstrumentoId.Location = new Point(368, 88);
             cboInstrumentoId.MaxDropDownItems = 4;
             cboInstrumentoId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboInstrumentoId.Name = "cboInstrumentoId";
-            cboInstrumentoId.Size = new Size(349, 49);
+            cboInstrumentoId.Size = new Size(343, 49);
             cboInstrumentoId.StartIndex = 0;
             cboInstrumentoId.TabIndex = 7;
+            // 
+            // txtId
+            // 
+            txtId.AnimateReadOnly = false;
+            txtId.AutoCompleteMode = AutoCompleteMode.None;
+            txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackgroundImageLayout = ImageLayout.None;
+            txtId.CharacterCasing = CharacterCasing.Normal;
+            txtId.Depth = 0;
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.HideSelection = true;
+            txtId.Hint = "Id da relação";
+            txtId.LeadingIcon = null;
+            txtId.Location = new Point(6, 156);
+            txtId.MaxLength = 32767;
+            txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PrefixSuffixText = null;
+            txtId.ReadOnly = false;
+            txtId.RightToLeft = RightToLeft.No;
+            txtId.SelectedText = "";
+            txtId.SelectionLength = 0;
+            txtId.SelectionStart = 0;
+            txtId.ShortcutsEnabled = true;
+            txtId.Size = new Size(705, 48);
+            txtId.TabIndex = 8;
+            txtId.TabStop = false;
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.TrailingIcon = null;
+            txtId.UseSystemPasswordChar = false;
             // 
             // CadastroMusicoInstrumento
             // 
@@ -149,5 +184,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit1;
         private ReaLTaiizor.Controls.MaterialComboBox cboMusicoId;
         private ReaLTaiizor.Controls.MaterialComboBox cboInstrumentoId;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
     }
 }

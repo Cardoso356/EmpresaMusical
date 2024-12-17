@@ -14,8 +14,9 @@ namespace EmpresaMusical.Domain.Entities
 
         }
 
-        public MusicoAlbum(Musico? musico, Album? album)
+        public MusicoAlbum(int id, Musico? musico, Album? album)
         {
+            Id = id;
             Musico = musico;
             Album = album;
         }

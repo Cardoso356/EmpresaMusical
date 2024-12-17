@@ -63,6 +63,16 @@ namespace EmpresaMusical.App.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconeSenha {
+            get {
+                object obj = ResourceManager.GetObject("iconeSenha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagemEmpresaMusical {
             get {
                 object obj = ResourceManager.GetObject("imagemEmpresaMusical", resourceCulture);

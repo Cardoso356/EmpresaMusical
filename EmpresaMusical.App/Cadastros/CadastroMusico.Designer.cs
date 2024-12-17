@@ -106,7 +106,7 @@
             txtSenha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtSenha.HideSelection = true;
             txtSenha.Hint = "Senha";
-            txtSenha.LeadingIcon = null;
+            txtSenha.LeadingIcon = Properties.Resources.iconeSenha;
             txtSenha.Location = new Point(450, 98);
             txtSenha.MaxLength = 32767;
             txtSenha.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;

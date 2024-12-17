@@ -70,7 +70,7 @@ namespace EmpresaMusical.Test
             Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375", "cardoso", "1234");
             Instrumento instrumento = new Instrumento(1, "Piano", "percussão");
 
-            MusicoInstrumento musicoInstrumento = new MusicoInstrumento(musico, instrumento);
+            MusicoInstrumento musicoInstrumento = new MusicoInstrumento(1, musico, instrumento);
 
             Assert.AreEqual(musicoInstrumento.Musico, musico);
             Assert.AreEqual(musicoInstrumento.Instrumento, instrumento);           
@@ -82,7 +82,7 @@ namespace EmpresaMusical.Test
             Musico musico = new Musico(1, "Beethoven", "Viena", "OMaisFoda@gmail.com", "991014375", "cardoso", "1234");
             Album album = new Album(1, "Sonata ao Luar", "vinil", DateTime.Parse("2002-05-22"));
 
-            MusicoAlbum musicoAlbum = new MusicoAlbum(musico, album);
+            MusicoAlbum musicoAlbum = new MusicoAlbum(1, musico, album);
 
             Assert.AreEqual(musicoAlbum.Musico, musico);
             Assert.AreEqual(musicoAlbum.Album, album);

@@ -76,19 +76,26 @@ namespace EmpresaMusical.App.Infra
             {
                 config.CreateMap<Instrumento, InstrumentoModels>()
                     .ForMember(d => d.NomeInstrumento, d => d.MapFrom(prop => $"{prop.NomeInstrumento}/{prop.Tipo}"));
+                    //.ForMember(d => d.NomeInstrumento, d => d.MapFrom(prop => $"{prop.NomeInstrumento}/{prop.Tipo}"));
 
                 config.CreateMap<Musico, MusicoModel>()
                     .ForMember(d => d.NomeMusico, d => d.MapFrom(x => $"{x.NomeMusico}"));
 
                 config.CreateMap<MusicoInstrumento, MusicoInstrumentoModel>()
-                    .ForMember(d => d.Musico, d => d.MapFrom(x => $"{x.Musico!.Id}"))
-                    .ForMember(d => d.Instrumento, d=>  d.MapFrom(x => $"{x.Instrumento!.Id}"));
+                    .ForMember(d => d.IdMusico, d => d.MapFrom(x => $"{x.Musico!.Id}"))
+                    .ForMember(d => d.Musico, d => d.MapFrom(x => $"{x.Musico!.NomeMusico}"))
+                    .ForMember(d => d.IdInstrumento, d => d.MapFrom(x => $"{x.Instrumento!.Id}"))
+                    .ForMember(d => d.Instrumento, d => d.MapFrom(x => $"{x.Instrumento!.NomeInstrumento}"));
 
-                /*config.CreateMap<Cliente, ClienteModel>()
-                    .ForMember(d => d.Cidade, d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
-                    .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
-                config.CreateMap<Grupo, GrupoModel>();
-                config.CreateMap<Produto, ProdutoModel>()
+                config.CreateMap<Album, AlbumModel>()
+                    .ForMember(d => d.TituloAlbum, d => d.MapFrom(x => $"{x.TituloAlbum!}"))
+                    .ForMember(d => d.Data, d => d.MapFrom(x => $"{x.Data!}"));
+
+                config.CreateMap<Musica, MusicaModel>()
+                    .ForMember(d => d.Album, d => d.MapFrom(x => x.Album!.TituloAlbum))
+                    .ForMember(d => d.IdAlbum, d => d.MapFrom(x => x.Album.Id));
+
+                /*config.CreateMap<Produto, ProdutoModel>()
                     .ForMember(d => d.Grupo, d => d.MapFrom(x => x.Grupo!.Nome))
                     .ForMember(d => d.IdGrupo, d => d.MapFrom(x => x.Grupo!.Id));
                 config.CreateMap<Venda, VendaModel>()

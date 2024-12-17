@@ -15,6 +15,8 @@ namespace EmpresaMusical.Repository.Mapping
         {
             builder.ToTable("MusicoInstrumento");
 
+            builder.HasKey(prop => prop.Id);
+
             builder.HasOne(prop => prop.Musico);
                 
             builder.HasOne(prop => prop.Instrumento);

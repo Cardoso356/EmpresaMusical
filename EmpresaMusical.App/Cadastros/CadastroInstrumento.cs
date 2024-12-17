@@ -16,7 +16,8 @@ namespace EmpresaMusical.App.Cadastros
 {
     public partial class CadastroInstrumento : CadastroBase
     {
-        private IBaseService<Instrumento> _instrumentoService;
+        private readonly IBaseService<Instrumento> _instrumentoService;
+
         private List<Instrumento> instrumentos;
         public CadastroInstrumento(IBaseService<Instrumento> instrumentoService)
         {

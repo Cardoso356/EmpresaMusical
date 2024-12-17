@@ -8,6 +8,7 @@ namespace EmpresaMusical.App.Models
 {
     public class MusicoInstrumentoModel
     {
+        public int Id { get; set; }
         public int IdMusico { get; set; }
         public string? Musico { get; set; }
         public int IdInstrumento { get; set; }

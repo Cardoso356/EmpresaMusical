@@ -11,6 +11,6 @@ namespace EmpresaMusical.App.Models
         public int Id { get; set; }
         public string? TituloAlbum { get; set; }
         public string? Formato { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime? Data { get; set; }
     }
 }
