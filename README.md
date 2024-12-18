@@ -1,0 +1,1 @@
+Este é o meu projeto final da disciplina de Programação Orientada a Eventos do 6º semestre da graduação em Engenharia da Computação. Utilizando os conceitos de DDD .NET, a linguagem C Sharp e o Visual Studio Community 2022, foi construído um Sistema de Gerenciamento de Empresa Musical.
