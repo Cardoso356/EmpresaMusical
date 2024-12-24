@@ -29,7 +29,7 @@ namespace EmpresaMusical.App.Outros
 
             if (musico == null)
             {
-                MessageBox.Show("Músico e/ou senha inválida!", "IFSP Store",
+                MessageBox.Show("Músico e/ou senha inválida!", "Empresa Musical",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else

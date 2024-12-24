@@ -27,7 +27,7 @@ namespace EmpresaMusical.App.Base
         #endregion
         private void botaoCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(@"Deseja realmente cancelar?", @"Empresa Musical", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 LimpaCampos();
                 tabControlCadastro.SelectedIndex = 1;
@@ -54,7 +54,7 @@ namespace EmpresaMusical.App.Base
         {
             if (dataGridViewConsulta.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(@"Deseja realmente excluir?", @"IFSP Store", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(@"Deseja realmente excluir?", @"Empresa Musical", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int id = (int)dataGridViewConsulta.SelectedRows[0].Cells["Id"].Value;
                     Deletar(id);
@@ -63,7 +63,7 @@ namespace EmpresaMusical.App.Base
             }
             else
             {
-                MessageBox.Show(@"Selecione algum registro!", @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Selecione algum registro!", @"Empresa Musical", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -119,7 +119,7 @@ namespace EmpresaMusical.App.Base
             }
             else
             {
-                MessageBox.Show(@"Selectione algum registro!", @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Selecione algum registro!", @"Empresa Musical", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

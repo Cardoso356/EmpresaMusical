@@ -86,7 +86,7 @@ namespace EmpresaMusical.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Empresa Musical", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -99,7 +99,7 @@ namespace EmpresaMusical.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Empresa Musical", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
